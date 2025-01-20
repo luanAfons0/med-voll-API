@@ -1,11 +1,11 @@
 package med.voll.api.Models;
 
-import jakarta.persistence.*;
+import med.voll.api.Records.Medic.Specialization;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
-import med.voll.api.Records.Medic.Specialization;
+import jakarta.persistence.*;
+import lombok.Getter;
 
 @Table(name = "medics")
 @Entity(name = "medic")
