@@ -1,17 +1,23 @@
 package med.voll.api.Controllers;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import med.voll.api.Records.Medic.CreateMedicRecord;
+import med.voll.api.Repository.MedicRepository;
+import med.voll.api.Models.MedicModel;
 
 @RestController
-@RequestMapping("/medic")
+@RequestMapping("medic")
 public class MedicController {
 
+    @Autowired
+    private MedicRepository medicRepository;
+
     @PostMapping
-   public void createMedic(@RequestBody CreateMedicRecord newMedicInfos){
-        System.out.println(newMedicInfos);
-   }
+    public void createMedic(@RequestBody CreateMedicRecord newMedicInfos){
+        medicRepository.save(new MedicModel(newMedicInfos));
+    }
 }

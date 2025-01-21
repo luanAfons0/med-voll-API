@@ -1,5 +1,6 @@
 package med.voll.api.Models;
 
+import med.voll.api.Records.Medic.CreateMedicRecord;
 import med.voll.api.Records.Medic.Specialization;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
@@ -28,4 +29,12 @@ public class MedicModel {
 
     @Embedded
     private Address address;
+
+    public MedicModel(CreateMedicRecord newMedicInfos) {
+        this.name = newMedicInfos.name();
+        this.email = newMedicInfos.email();
+        this.crm = newMedicInfos.crm();
+        this.address = new Address(newMedicInfos.address());
+        this.specialization = newMedicInfos.specialization();
+    }
 }

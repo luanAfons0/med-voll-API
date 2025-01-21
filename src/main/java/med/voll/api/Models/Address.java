@@ -1,14 +1,12 @@
 package med.voll.api.Models;
 
+import med.voll.api.Records.Address.AddressRecord;
 import jakarta.persistence.Embeddable;
 import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 
 @Embeddable
 @Getter
-@NoArgsConstructor
 @AllArgsConstructor
 public class Address {
     private String street;
@@ -17,4 +15,22 @@ public class Address {
     private String city;
     private String complement;
     private String number;
+
+    public Address(){
+        this.cep = "";
+        this.city = "";
+        this.complement = "";
+        this.number = "";
+        this.neighborhood = "";
+        this.street = "";
+    }
+
+    public Address(AddressRecord newAddress) {
+        this.cep = newAddress.cep();
+        this.city = newAddress.city();
+        this.complement = newAddress.city();
+        this.number = newAddress.number();
+        this.neighborhood = newAddress.neighborhood();
+        this.street = newAddress.street();
+    }
 }
