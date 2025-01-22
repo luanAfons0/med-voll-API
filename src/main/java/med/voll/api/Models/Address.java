@@ -13,6 +13,7 @@ public class Address {
     private String neighborhood;
     private String cep;
     private String city;
+    private String uf;
     private String complement;
     private String number;
 
@@ -21,6 +22,7 @@ public class Address {
         this.city = "";
         this.complement = "";
         this.number = "";
+        this.uf = "";
         this.neighborhood = "";
         this.street = "";
     }
@@ -32,5 +34,6 @@ public class Address {
         this.number = newAddress.number();
         this.neighborhood = newAddress.neighborhood();
         this.street = newAddress.street();
+        this.uf = newAddress.uf();
     }
 }

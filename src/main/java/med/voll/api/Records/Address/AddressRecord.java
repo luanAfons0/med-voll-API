@@ -5,6 +5,7 @@ public record AddressRecord(
         String neighborhood,
         String cep,
         String city,
+        String uf,
         String complement,
         String number
 ) { }
