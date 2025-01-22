@@ -1,5 +1,6 @@
 package med.voll.api.Controllers;
 
+import jakarta.validation.Valid;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,7 +20,7 @@ public class MedicController {
 
     @PostMapping
     @Transactional
-    public void createMedic(@RequestBody CreateMedicRecord newMedicInfos){
+    public void createMedic(@RequestBody @Valid CreateMedicRecord newMedicInfos){
         medicRepository.save(new MedicModel(newMedicInfos));
     }
 }
