@@ -1,6 +1,5 @@
 package med.voll.api.Controllers;
 
-import jakarta.validation.Valid;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import med.voll.api.Records.Medic.CreateMedicRecord;
 import med.voll.api.Repository.MedicRepository;
 import med.voll.api.Models.MedicModel;
+import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("medic")
