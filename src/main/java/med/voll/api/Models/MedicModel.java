@@ -23,6 +23,7 @@ public class MedicModel {
     private String name;
     private String email;
     private String crm;
+    private String cellphone;
 
     @Enumerated(EnumType.STRING)
     private Specialization specialization;
@@ -34,6 +35,7 @@ public class MedicModel {
         this.name = newMedicInfos.name();
         this.email = newMedicInfos.email();
         this.crm = newMedicInfos.crm();
+        this.cellphone = newMedicInfos.cellphone();
         this.address = new Address(newMedicInfos.address());
         this.specialization = newMedicInfos.specialization();
     }

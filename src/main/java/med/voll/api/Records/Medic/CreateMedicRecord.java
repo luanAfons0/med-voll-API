@@ -9,6 +9,9 @@ public record CreateMedicRecord(
         String name,
 
         @NotBlank
+        String cellphone,
+
+        @NotBlank
         @Email
         String email,
 
