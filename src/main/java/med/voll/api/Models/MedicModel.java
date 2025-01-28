@@ -4,14 +4,10 @@ import med.voll.api.Records.Medic.CreateMedicRecord;
 import med.voll.api.Records.Medic.Specialization;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
 import jakarta.persistence.*;
-import lombok.Getter;
 
 @Table(name = "medics")
 @Entity(name = "medic")
-@Getter
-@NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(of = "id")
 public class MedicModel {
@@ -38,5 +34,23 @@ public class MedicModel {
         this.cellphone = newMedicInfos.cellphone();
         this.address = new Address(newMedicInfos.address());
         this.specialization = newMedicInfos.specialization();
+    }
+
+    public MedicModel() { }
+
+    public String getName(){
+        return this.name;
+    }
+
+    public String getEmail() {
+        return this.email;
+    }
+
+    public String getCrm() {
+        return this.crm;
+    }
+
+    public Specialization getSpecialization() {
+        return this.specialization;
     }
 }

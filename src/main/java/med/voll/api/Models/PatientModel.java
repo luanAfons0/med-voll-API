@@ -3,14 +3,10 @@ package med.voll.api.Models;
 import med.voll.api.Records.Pacient.CreatePacientRecord;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
 import jakarta.persistence.*;
-import lombok.Getter;
 
 @Table(name = "patients")
 @Entity(name = "patient")
-@Getter
-@NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(of = "id")
 public class PatientModel {
@@ -31,5 +27,19 @@ public class PatientModel {
         this.email = newPatient.email();
         this.cellphone = newPatient.cellphone();
         this.address = new Address(newPatient.address());
+    }
+
+    public PatientModel() { }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getCellphone() {
+        return cellphone;
     }
 }
