@@ -27,8 +27,8 @@ public class MedicController {
     }
 
     @GetMapping
-    public Page<GetMedicRecord> getMedics(@PageableDefault(size = 5, sort = {"name"}) Pageable pagination){
-        return medicRepository.findAll(pagination).map(GetMedicRecord::new);
+    public Page<GetMedicRecord> getPaginatedMedics(@PageableDefault(size = 5, sort = {"name"}) Pageable pagination){
+        return medicRepository.findAllByDeletedFalse(pagination).map(GetMedicRecord::new);
     }
 
     @PutMapping
@@ -36,6 +36,20 @@ public class MedicController {
     public void updateMedic(@RequestBody @Valid UpdateMedicRecord requestBody){
         MedicModel medic = medicRepository.getReferenceById(requestBody.id());
         medic.updateInfos(requestBody);
+        medicRepository.save(medic);
+    }
+
+    @DeleteMapping("/{id}")
+    @Transactional
+    public void deleteMedic(@PathVariable Long id){
+        medicRepository.deleteById(id);
+    }
+
+    @DeleteMapping("/logical/{id}")
+    @Transactional
+    public void deleteMedicLogicaly(@PathVariable Long id){
+        MedicModel medic = medicRepository.getReferenceById(id);
+        medic.excludeLogically();
         medicRepository.save(medic);
     }
 }

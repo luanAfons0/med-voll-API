@@ -21,6 +21,7 @@ public class MedicModel {
     private String email;
     private String crm;
     private String cellphone;
+    private boolean deleted;
 
     @Enumerated(EnumType.STRING)
     private Specialization specialization;
@@ -45,6 +46,10 @@ public class MedicModel {
         if(newInfos.cellphone() != null) this.cellphone = newInfos.cellphone();
         if(newInfos.address() != null) this.address.updateInfos(newInfos.address());
         return this;
+    }
+
+    public void excludeLogically(){
+        this.deleted = true;
     }
 
     public long getId() {
