@@ -1,4 +1,4 @@
-package med.voll.api.Records.Medic;
+package med.voll.api.DTOs.Medic;
 
 public enum Specialization {
     ORTHOPEDIC,

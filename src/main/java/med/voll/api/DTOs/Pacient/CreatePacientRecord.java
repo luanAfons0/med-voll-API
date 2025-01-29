@@ -1,6 +1,6 @@
-package med.voll.api.Records.Pacient;
+package med.voll.api.DTOs.Pacient;
 
-import med.voll.api.Records.Address.AddressRecord;
+import med.voll.api.DTOs.Address.AddressRecord;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.Valid;

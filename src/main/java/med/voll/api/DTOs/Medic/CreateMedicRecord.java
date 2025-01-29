@@ -1,8 +1,8 @@
-package med.voll.api.Records.Medic;
+package med.voll.api.DTOs.Medic;
 
-import jakarta.validation.Valid;
+import med.voll.api.DTOs.Address.AddressRecord;
 import jakarta.validation.constraints.*;
-import med.voll.api.Records.Address.AddressRecord;
+import jakarta.validation.Valid;
 
 public record CreateMedicRecord(
         @NotBlank

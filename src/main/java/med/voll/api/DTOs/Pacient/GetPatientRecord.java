@@ -1,4 +1,4 @@
-package med.voll.api.Records.Pacient;
+package med.voll.api.DTOs.Pacient;
 
 import med.voll.api.Models.PatientModel;
 

@@ -1,8 +1,9 @@
-package med.voll.api.Records.Medic;
+package med.voll.api.DTOs.Medic;
 
 import med.voll.api.Models.MedicModel;
 
 public record GetMedicRecord(
+        Long id,
         String name,
         String email,
         String crm,
@@ -10,6 +11,6 @@ public record GetMedicRecord(
 ) {
 
     public GetMedicRecord(MedicModel medicModel){
-        this(medicModel.getName(), medicModel.getEmail(), medicModel.getCrm(), medicModel.getSpecialization());
+        this(medicModel.getId(), medicModel.getName(), medicModel.getEmail(), medicModel.getCrm(), medicModel.getSpecialization());
     }
 }

@@ -1,6 +1,6 @@
 package med.voll.api.Models;
 
-import med.voll.api.Records.Pacient.CreatePacientRecord;
+import med.voll.api.DTOs.Pacient.CreatePacientRecord;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import jakarta.persistence.*;

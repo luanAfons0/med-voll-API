@@ -1,7 +1,8 @@
 package med.voll.api.Models;
 
-import med.voll.api.Records.Medic.CreateMedicRecord;
-import med.voll.api.Records.Medic.Specialization;
+import med.voll.api.DTOs.Medic.UpdateMedicRecord;
+import med.voll.api.DTOs.Medic.CreateMedicRecord;
+import med.voll.api.DTOs.Medic.Specialization;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import jakarta.persistence.*;
@@ -37,6 +38,18 @@ public class MedicModel {
     }
 
     public MedicModel() { }
+
+
+    public MedicModel updateInfos(UpdateMedicRecord newInfos){
+        if(newInfos.name() != null) this.name = newInfos.name();
+        if(newInfos.cellphone() != null) this.cellphone = newInfos.cellphone();
+        if(newInfos.address() != null) this.address.updateInfos(newInfos.address());
+        return this;
+    }
+
+    public long getId() {
+        return id;
+    }
 
     public String getName(){
         return this.name;
