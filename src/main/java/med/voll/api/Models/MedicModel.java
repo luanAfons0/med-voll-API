@@ -48,27 +48,15 @@ public class MedicModel {
         return this;
     }
 
-    public void excludeLogically(){
-        this.deleted = true;
-    }
+    public void excludeLogically(){ this.deleted = true; }
 
-    public long getId() {
-        return id;
-    }
+    public long getId() { return id; }
 
-    public String getName(){
-        return this.name;
-    }
+    public String getName(){ return this.name; }
 
-    public String getEmail() {
-        return this.email;
-    }
+    public String getEmail() { return this.email; }
 
-    public String getCrm() {
-        return this.crm;
-    }
+    public String getCrm() { return this.crm; }
 
-    public Specialization getSpecialization() {
-        return this.specialization;
-    }
+    public Specialization getSpecialization() { return this.specialization; }
 }

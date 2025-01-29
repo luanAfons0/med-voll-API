@@ -1,6 +1,7 @@
 package med.voll.api.Models;
 
 import med.voll.api.DTOs.Pacient.CreatePacientRecord;
+import med.voll.api.DTOs.Pacient.UpdatePatientRecord;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import jakarta.persistence.*;
@@ -18,6 +19,7 @@ public class PatientModel {
     private String name;
     private String email;
     private String cellphone;
+    private boolean deleted;
 
     @Embedded
     private Address address;
@@ -30,6 +32,17 @@ public class PatientModel {
     }
 
     public PatientModel() { }
+
+    public PatientModel updateInfos(UpdatePatientRecord newInfos){
+        if(newInfos.name() != null) this.name = newInfos.name();
+        if(newInfos.cellphone() != null) this.cellphone = newInfos.cellphone();
+        if(newInfos.address() != null) this.address.updateInfos(newInfos.address());
+        return this;
+    }
+
+    public void excludeLogically() { deleted = true; }
+
+    public long getId() { return id; }
 
     public String getName() {
         return name;
